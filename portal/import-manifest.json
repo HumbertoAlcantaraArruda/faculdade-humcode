@@ -1,0 +1,492 @@
+{
+  "subjects": [
+    {
+      "key": "bdi",
+      "name": "Banco de Dados I",
+      "description": "Modelagem, SQL e fundamentos de bancos de dados.",
+      "color": "blue"
+    },
+    {
+      "key": "bdii",
+      "name": "Banco de Dados II",
+      "description": "SGBDs, triggers, MongoDB e exercícios.",
+      "color": "violet"
+    },
+    {
+      "key": "edi",
+      "name": "Estruturas de Dados I",
+      "description": "Conceitos e exercícios de estruturas de dados.",
+      "color": "teal"
+    },
+    {
+      "key": "edii",
+      "name": "Estruturas de Dados II",
+      "description": "Ponteiros, roteiros e avaliações.",
+      "color": "orange"
+    },
+    {
+      "key": "so",
+      "name": "Sistemas Operacionais I",
+      "description": "Processos, threads e escalonamento.",
+      "color": "blue"
+    },
+    {
+      "key": "f2",
+      "name": "Ferramentas Computacionais II",
+      "description": "JDBC, orientação a objetos, UML e acesso a dados.",
+      "color": "rose"
+    },
+    {
+      "key": "f3",
+      "name": "Ferramentas Computacionais III",
+      "description": "Guias e atividades de Ferramentas Computacionais III.",
+      "color": "violet"
+    },
+    {
+      "key": "gti",
+      "name": "Governança de TI",
+      "description": "Guias de estudo e questões de gestão.",
+      "color": "teal"
+    },
+    {
+      "key": "ingles",
+      "name": "Inglês",
+      "description": "Conteúdos e atividades de inglês.",
+      "color": "orange"
+    },
+    {
+      "key": "ferramentas",
+      "name": "Programação e ferramentas",
+      "description": "Guias de programação e ferramentas de desenvolvimento.",
+      "color": "blue"
+    },
+    {
+      "key": "portfolio",
+      "name": "Portfólio",
+      "description": "Projetos e apresentação pessoal.",
+      "color": "rose"
+    }
+  ],
+  "files": [
+    {
+      "subject": "so",
+      "title": "SO1 — Resumo Completo | Sistemas Operacionais I",
+      "original_name": "Resumo_Completo.html",
+      "stored_path": "SOI/Resumo_Completo.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 123041,
+      "sha256": "b9990cd7eee8fb5f5a94c7d6c1813d869d9ef0650596bed2b98905f681cddd94",
+      "modified": "20260622155842",
+      "trusted_app": true
+    },
+    {
+      "subject": "so",
+      "title": "Escalonamento de Processos — SO1",
+      "original_name": "Escalonamento_Interativo.html",
+      "stored_path": "SOI/Escalonamento_Interativo.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 73110,
+      "sha256": "e23dff5bbc9e39039dbe140c8690ce763bb60970b39b83f0ff25017bb54e2d6b",
+      "modified": "20260616230009",
+      "trusted_app": true
+    },
+    {
+      "subject": "so",
+      "title": "Problemas Clássicos de Concorrência - SO1",
+      "original_name": "problemas_classicos_so.html",
+      "stored_path": "SOI/problemas_classicos_so.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 54245,
+      "sha256": "62d71654063763f077647596b75d4d3f040b8d962d62aafaa20275d69b5053c7",
+      "modified": "20260607213121",
+      "trusted_app": true
+    },
+    {
+      "subject": "so",
+      "title": "Quiz Preparatório — Concorrência & Deadlocks · SO I",
+      "original_name": "SistemasOperacionais.html",
+      "stored_path": "SOI/SistemasOperacionais.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 95928,
+      "sha256": "840bbd77d37453098de7ebc459d04ca76d6648408ebc57df079659bd5d254290",
+      "modified": "20260521203906",
+      "trusted_app": true
+    },
+    {
+      "subject": "so",
+      "title": "Threads — Guia Interativo · Sistemas Operacionais I",
+      "original_name": "Threads.html",
+      "stored_path": "SOI/Threads.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 86813,
+      "sha256": "c684fb24c8a831202cf7f37bdc29c06f2b93cdc049b29f87378b2afb4f3538b9",
+      "modified": "20260525225006",
+      "trusted_app": true
+    },
+    {
+      "subject": "so",
+      "title": "Threads - SO1 Resumo Completo",
+      "original_name": "threads_resumo_completo.html",
+      "stored_path": "SOI/threads_resumo_completo.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 64026,
+      "sha256": "98fe5e89ef7ed7b64c17443f1f901df6ef7a2dc40506277b7e59e9c63b07da8e",
+      "modified": "20260607213123",
+      "trusted_app": true
+    },
+    {
+      "subject": "edi",
+      "title": "Caderno II — Pilhas, Filas & Listas",
+      "original_name": "ed1-segundobimestre.html",
+      "stored_path": "EDI/ed1-segundobimestre.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 69045,
+      "sha256": "ce1ff4dd51d7b44a75c2aeb34c01a5181679280d128dc2a043d2d4cca37b4220",
+      "modified": "20260531175059",
+      "trusted_app": true
+    },
+    {
+      "subject": "edi",
+      "title": "Caderno de Ponteiros — Estruturas de Dados I",
+      "original_name": "ed1.html",
+      "stored_path": "EDI/ed1.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 47516,
+      "sha256": "ca53eff4b6f34e2f3eea694b00a59e5967c0330c1d0118eafa99d8873ef1b060",
+      "modified": "20260421234630",
+      "trusted_app": true
+    },
+    {
+      "subject": "edi",
+      "title": "Página de teste · Estruturas de Dados I",
+      "original_name": "teste.html",
+      "stored_path": "EDI/teste.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 150,
+      "sha256": "f2f6bf554e0109d7b0fcf6310937a0eeedf7de3657715db165ab26b547b15a08",
+      "modified": "20260626013808",
+      "trusted_app": true
+    },
+    {
+      "subject": "f2",
+      "title": "Gabarito Comentado — Ferramentas Computacionais II",
+      "original_name": "f2.html",
+      "stored_path": "F2/f2.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 50771,
+      "sha256": "0ca24ca5a0ff6328ea36e633e97cc3cf15a7ac239b5f56f50fdc9be6cd479a74",
+      "modified": "20260611225149",
+      "trusted_app": true
+    },
+    {
+      "subject": "f2",
+      "title": "Guia de Estudo — Ferramentas Computacionais II · JDBC, POO, UML e DAL",
+      "original_name": "f2pt2.html",
+      "stored_path": "F2/f2pt2.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 49856,
+      "sha256": "8d998d59e78aa2ba1f364f98ed2ce74c2f1844dc1c6979d679c511d8e1a5f919",
+      "modified": "20260612164613",
+      "trusted_app": true
+    },
+    {
+      "subject": "edii",
+      "title": "Guia de 30 dias — Estruturas de Dados II",
+      "original_name": "guia-estudos.html",
+      "stored_path": "EDII/guia-estudos.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 34098,
+      "sha256": "8eddb62eef13041a47f2a7961d4e69f296bc9b98ac873c3567dbfe98e7e13a0c",
+      "modified": "20260424215617",
+      "trusted_app": true
+    },
+    {
+      "subject": "edii",
+      "title": "Ponteiros em C — Estruturas de Dados II",
+      "original_name": "ponteiros.html",
+      "stored_path": "EDII/ponteiros.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 25712,
+      "sha256": "3cd846d7106d8bcc248bb4060231cc345d5956a29c911e0a0ef37d7ce3fca227",
+      "modified": "20260603225010",
+      "trusted_app": true
+    },
+    {
+      "subject": "f3",
+      "title": "Guia de Estudos — Ferramentas Computacionais III",
+      "original_name": "F3_Artefato.html",
+      "stored_path": "F3/F3_Artefato.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 182001,
+      "sha256": "b12e20dae2cb845e3b759bea84216fa19fe5c21c823f912ad9f61edc08a15f89",
+      "modified": "20260625005259",
+      "trusted_app": true
+    },
+    {
+      "subject": "edii",
+      "title": "Aval ED II 1Sem 2Bim 2021 BCC",
+      "original_name": "Aval_ED_II_1Sem_2Bim_2021_BCC.pdf",
+      "stored_path": "materiaisEDII/Aval_ED_II_1Sem_2Bim_2021_BCC.pdf",
+      "extension": "pdf",
+      "mime": "application/pdf",
+      "size": 592358,
+      "sha256": "92f1569027cc739181fbbb001a0c8bbd49fedb02fbcacabf1b7826655f797bac",
+      "modified": "20260704211655",
+      "trusted_app": false
+    },
+    {
+      "subject": "edii",
+      "title": "Aval ED II 2Sem 2a Chamada 2020 BSI",
+      "original_name": "Aval_ED_II_2Sem_2a_Chamada_2020_BSI.pdf",
+      "stored_path": "materiaisEDII/Aval_ED_II_2Sem_2a_Chamada_2020_BSI.pdf",
+      "extension": "pdf",
+      "mime": "application/pdf",
+      "size": 586587,
+      "sha256": "56381783e574f352bc2f19f26930e9e0541fdf8da8031dbd6a2693a4fe928114",
+      "modified": "20260704211655",
+      "trusted_app": false
+    },
+    {
+      "subject": "edii",
+      "title": "Aval ED II 2Sem 2Bim 2020 BCC",
+      "original_name": "Aval_ED_II_2Sem_2Bim_2020_BCC.pdf",
+      "stored_path": "materiaisEDII/Aval_ED_II_2Sem_2Bim_2020_BCC.pdf",
+      "extension": "pdf",
+      "mime": "application/pdf",
+      "size": 621518,
+      "sha256": "d2f8095fa45cb0868bae7134b6f114e0532a0ba4a3066c5e35a5ab548f9a42a0",
+      "modified": "20260704211656",
+      "trusted_app": false
+    },
+    {
+      "subject": "edii",
+      "title": "Aval ED II 1Sem 2a Chamada 2021 BCC",
+      "original_name": "Aval_ED_II_1Sem_2a_Chamada_2021_BCC.pdf",
+      "stored_path": "materiaisEDII/Aval_ED_II_1Sem_2a_Chamada_2021_BCC.pdf",
+      "extension": "pdf",
+      "mime": "application/pdf",
+      "size": 706132,
+      "sha256": "1a9f9e90db2e21d10650f772b64dbe949bb0289b8ade816fd7d0876b7aa7dd41",
+      "modified": "20260704211658",
+      "trusted_app": false
+    },
+    {
+      "subject": "edii",
+      "title": "Aval ED II 1Sem Exame 2021 BCC",
+      "original_name": "Aval_ED_II_1Sem_Exame_2021_BCC.pdf",
+      "stored_path": "materiaisEDII/Aval_ED_II_1Sem_Exame_2021_BCC.pdf",
+      "extension": "pdf",
+      "mime": "application/pdf",
+      "size": 770329,
+      "sha256": "798b13fa6cc90538eeaa0591c644a0bc749e59f6352ab1ef94084a09323707eb",
+      "modified": "20260704211656",
+      "trusted_app": false
+    },
+    {
+      "subject": "ingles",
+      "title": "Roteiro de Inglês · Bloco 1 · A2 → B1",
+      "original_name": "ingles.html",
+      "stored_path": "ingles.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 61209,
+      "sha256": "22f805655b35909a2f37e0e0ada7a93ec684e1b4013e7dc251dbffd2ed65178d",
+      "modified": "20260718174331",
+      "trusted_app": true
+    },
+    {
+      "subject": "portfolio",
+      "title": "Meu portfólio",
+      "original_name": "index.html",
+      "stored_path": "portfolio/index.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 484,
+      "sha256": "102712d66eb8bc7de68b1217aa40beeb5c8205e1cdb6ca712c644f17a0650d16",
+      "modified": "20260725152912",
+      "trusted_app": true
+    },
+    {
+      "subject": "bdi",
+      "title": "Curso Interativo — Fundamentos de Banco de Dados e SQL",
+      "original_name": "bancoDeDadosI.html",
+      "stored_path": "bancoDeDadosI.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 605072,
+      "sha256": "9a163b15af8fc91b229ea778816cb7245447130b949d65f754487b08fca728de",
+      "modified": "20260819114708",
+      "trusted_app": true
+    },
+    {
+      "subject": "edii",
+      "title": "Plano de Desenvolvimento — Simulador de SGBD",
+      "original_name": "index.php",
+      "stored_path": "trab/index.php",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 146864,
+      "sha256": "2853810c337508df3df8f7322c9ab34204b4bc28d3581e9d8dbbd6dee0a0f308",
+      "modified": "20260820201710",
+      "trusted_app": true
+    },
+    {
+      "subject": "edii",
+      "title": "Plano de Desenvolvimento — Simulador de SGBD com Listas Encadeadas",
+      "original_name": "plano-sgbd-interativo.html",
+      "stored_path": "trab/plano-sgbd-interativo.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 141696,
+      "sha256": "332fc98044c2689fbca1559b7c21f115388b914a3528281531c2b064c4254bcb",
+      "modified": "20260820201711",
+      "trusted_app": true
+    },
+    {
+      "subject": "ferramentas",
+      "title": "Camadas do Claude Code — memória, skills, hooks, subagents",
+      "original_name": "claude-code-camadas.html",
+      "stored_path": "claude-code-camadas.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 38634,
+      "sha256": "c0b075c3baac5b5197d5a2a1b7bb153606e4986502fd524d586d2f94e1466872",
+      "modified": "20260827130658",
+      "trusted_app": true
+    },
+    {
+      "subject": "bdii",
+      "title": "Guia prático · MongoDB com Spring Boot",
+      "original_name": "guia-mongo-spring.html",
+      "stored_path": "guia-mongo-spring.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 101001,
+      "sha256": "1bf8f774578ce41f34ec17f477cd2543c41260ef93db7e1fc6a1f03e69919543",
+      "modified": "20260922155901",
+      "trusted_app": true
+    },
+    {
+      "subject": "ferramentas",
+      "title": "Boas práticas com Claude Code",
+      "original_name": "claude-code.html",
+      "stored_path": "claude-code.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 132089,
+      "sha256": "749066c9633107d3e56d11e72e6940ec50971a2bca94ac259d8d024d6218ba0d",
+      "modified": "20260928131529",
+      "trusted_app": true
+    },
+    {
+      "subject": "gti",
+      "title": "Guia de Estudos · Governança de TI (ITIL)",
+      "original_name": "guia-gti.html",
+      "stored_path": "guia-gti.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 130562,
+      "sha256": "a2966e819d125f9cff82573809e507f7c6f81f3ad227bf0595d7480dd4a0ed45",
+      "modified": "20260929111753",
+      "trusted_app": true
+    },
+    {
+      "subject": "gti",
+      "title": "Prova ITIL v3 | Estudo interativo",
+      "original_name": "prova-gti.html",
+      "stored_path": "prova-gti.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 29672,
+      "sha256": "2f42c9c12be2337e40f616021f852ad1a772fa409028980a74d857a935e556fa",
+      "modified": "20260929175958",
+      "trusted_app": true
+    },
+    {
+      "subject": "bdii",
+      "title": "Prova BD II",
+      "original_name": "prova-bd2.html",
+      "stored_path": "prova-bd2.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 22456,
+      "sha256": "0405e51c7bc3f4fdb9a8c178c4981b1411e02b3e86bed123b0ada9e104fa3fc5",
+      "modified": "20260930112416",
+      "trusted_app": true
+    },
+    {
+      "subject": "bdii",
+      "title": "Guia BD II · 1º Bimestre",
+      "original_name": "guia-estudo-bd2.html",
+      "stored_path": "guia-estudo-bd2.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 125481,
+      "sha256": "d6b18c188b80a09239ced8f986ed19daf5392d1bcab9c123525c2f17e66358e2",
+      "modified": "20260930112414",
+      "trusted_app": true
+    },
+    {
+      "subject": "edii",
+      "title": "Roteiro da Apresentação",
+      "original_name": "roteiro_ed2.html",
+      "stored_path": "roteiro_ed2.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 170947,
+      "sha256": "4a5a4ba60bb1ed30ed043a08231e5a302a64356f12c67ff1fefd976329379a08",
+      "modified": "20260930120945",
+      "trusted_app": true
+    },
+    {
+      "subject": "edii",
+      "title": "Explicação do Código",
+      "original_name": "explica_codigo.html",
+      "stored_path": "explica_codigo.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 108561,
+      "sha256": "2997c0c6ea990cfaad9019b381dad602bf8c2190fa230ebf3e34129ff32af515",
+      "modified": "20260930200750",
+      "trusted_app": true
+    },
+    {
+      "subject": "edii",
+      "title": "Guia de Estrutura de Dados II: 1º bimestre",
+      "original_name": "guia-ed2.html",
+      "stored_path": "guia-ed2.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 140115,
+      "sha256": "6d124db63cf2dcf78c60fece56ff21379151164dc5aedf9d0de5044e1f74c186",
+      "modified": "20261001113559",
+      "trusted_app": true
+    },
+    {
+      "subject": "bdii",
+      "title": "Gatilhos no Oracle",
+      "original_name": "trigger.html",
+      "stored_path": "BDII/trigger.html",
+      "extension": "html",
+      "mime": "text/html",
+      "size": 75223,
+      "sha256": "1452b529dbcda954d7e868822ab3d4999fd9cdd8ab7a874ee101e69e365f7a53",
+      "modified": "20261006230859",
+      "trusted_app": true
+    }
+  ]
+}

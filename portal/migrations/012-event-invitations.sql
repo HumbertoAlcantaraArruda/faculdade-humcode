@@ -1,0 +1,31 @@
+ALTER TABLE hc_portal_users ADD COLUMN email VARCHAR(254) NULL;
+
+CREATE TABLE IF NOT EXISTS hc_portal_invitations (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    source_event_id BIGINT UNSIGNED NULL,
+    sender_id BIGINT UNSIGNED NOT NULL,
+    recipient_id BIGINT UNSIGNED NOT NULL,
+    source_revision INT NOT NULL,
+    state VARCHAR(16) NOT NULL DEFAULT 'pending',
+    title VARCHAR(180) NOT NULL,
+    description TEXT NOT NULL,
+    event_date DATE NOT NULL,
+    starts_at TIME NULL,
+    ends_at TIME NULL,
+    category VARCHAR(32) NULL,
+    priority VARCHAR(16) NOT NULL,
+    subject_id BIGINT UNSIGNED NULL,
+    accepted_event_id BIGINT UNSIGNED NULL,
+    read_at TIMESTAMP NULL DEFAULT NULL,
+    revision INT NOT NULL DEFAULT 1,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY hc_portal_invitation_version (source_event_id, recipient_id, source_revision),
+    KEY hc_portal_invitation_recipient (recipient_id, read_at),
+    KEY hc_portal_invitation_sender (sender_id, created_at),
+    FOREIGN KEY (source_event_id) REFERENCES hc_portal_events(id) ON DELETE SET NULL,
+    FOREIGN KEY (accepted_event_id) REFERENCES hc_portal_events(id) ON DELETE SET NULL,
+    FOREIGN KEY (subject_id) REFERENCES hc_portal_subjects(id) ON DELETE SET NULL,
+    FOREIGN KEY (sender_id) REFERENCES hc_portal_users(id) ON DELETE CASCADE,
+    FOREIGN KEY (recipient_id) REFERENCES hc_portal_users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,1 @@
+ALTER TABLE hc_portal_notes ADD COLUMN important TINYINT(1) NOT NULL DEFAULT 0;

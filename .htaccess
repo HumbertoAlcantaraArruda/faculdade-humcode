@@ -1,0 +1,21 @@
+Options -Indexes
+DirectoryIndex index.php
+ErrorDocument 403 default
+ErrorDocument 404 default
+RewriteEngine On
+
+# Portal atende somente a raiz do site, sem o prefixo /humcode/.
+# Esta pasta tem .htaccess proprio, entao as regras da pasta superior nao valem aqui.
+RewriteCond %{THE_REQUEST} \s/+humcode(/|\s|\?) [NC]
+RewriteRule ^ - [R=404,L]
+
+# Pasta de outro projeto mantém seus próprios endereços e regras.
+RewriteRule ^trabalho_datait(?:/|$) - [L]
+RewriteRule ^\.well-known/acme-challenge/[a-zA-Z0-9_-]+$ - [L]
+RewriteRule ^portal/assets/[a-zA-Z0-9._/-]+\.(?:css|js|svg)$ - [L]
+RewriteRule ^portal(?:/|$) - [F,L]
+RewriteRule ^index\.php$ - [L]
+RewriteRule ^$ index.php [L]
+
+# Rotas do portal e arquivos antigos passam pelo mesmo controle de acesso.
+RewriteRule ^(.+)$ index.php [L]

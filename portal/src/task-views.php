@@ -1,0 +1,39 @@
+<?php
+declare(strict_types=1);
+
+function render_task_status_form(array $task, string $returnTo): void { $done = $task['completed_at'] !== null; ?>
+<form class="task-status-form" method="post" action="<?= e(url('set-task-status')) ?>"><?= csrf() ?><input type="hidden" name="id" value="<?= (int) $task['id'] ?>"><input type="hidden" name="revision" value="<?= (int) $task['revision'] ?>"><input type="hidden" name="complete" value="<?= $done ? '0' : '1' ?>"><input type="hidden" name="return_to" value="<?= e($returnTo) ?>"><button class="icon-button task-status-button" role="checkbox" aria-checked="<?= $done ? 'true' : 'false' ?>" aria-label="<?= e(($done ? 'Reabrir tarefa ' : 'Concluir tarefa ') . $task['title']) ?>" title="<?= $done ? 'Reabrir tarefa' : 'Concluir tarefa' ?>"><?= icon($done ? 'check' : 'square') ?></button></form>
+<?php }
+function render_task_row(array $task, string $returnTo): void { ?>
+<article class="agenda-event-row task-row <?= $task['completed_at'] !== null ? 'task-complete' : '' ?>" data-task-row="<?= (int) $task['id'] ?>"><?php render_task_status_form($task, $returnTo); ?><div class="task-row-content"><a class="task-title" href="<?= e(url('view-task', ['id' => $task['id']])) ?>"><strong><?= e($task['title']) ?></strong></a><p><?= e(event_day_label($task['task_date'])) ?> · <?= e(event_time_label($task)) ?> · <?= e(event_category_label($task)) ?><?php if ($task['subject_name'] !== null): ?> · <?= e($task['subject_name']) ?><?php endif; ?></p><?php if ($task['event_id'] !== null): ?><small>Evento: <a href="<?= e(url('view-event', ['id' => $task['event_id']])) ?>"><?= e($task['event_title']) ?></a></small><?php endif; ?></div><div class="task-row-badges"><?= event_badge($task) ?><small><?= $task['completed_at'] !== null ? 'Concluída' : 'Pendente' ?></small></div></article>
+<?php }
+function render_event_tasks(array $event): void {
+    $tasks = task_list((int) current_user()['id'], (int) $event['id']);
+    $done = count(array_filter($tasks, function ($task) { return $task['completed_at'] !== null; })); ?>
+<section class="event-tasks" aria-labelledby="event-tasks-heading"><div class="calendar-toolbar"><div><h2 id="event-tasks-heading">Tarefas deste evento</h2><p class="muted" data-task-progress><?= $done ?> de <?= count($tasks) ?> concluídas</p></div><a class="button button-secondary" href="<?= e(url('new-task', ['event_id' => $event['id']])) ?>"><?= icon('plus') ?>Nova tarefa neste evento</a></div><?php if (!$tasks): ?><div class="agenda-empty"><p>Adicione tarefas para se preparar para este evento.</p></div><?php endif; ?><?php foreach ($tasks as $task): render_task_row($task, url('view-event', ['id' => $event['id']])); endforeach; ?></section>
+<?php }
+function render_task_form(array $user, ?array $task): void {
+    $defaults = $task;
+    if (!$task && isset($_GET['event_id'])) {
+        $event = event_record(numeric_id($_GET['event_id']), (int) $user['id']);
+        $defaults = $event;
+        $defaults['event_id'] = $event['id'];
+        $defaults['title'] = ''; $defaults['description'] = '';
+    }
+    $date = $defaults['event_date'] ?? event_date($_GET['dia'] ?? date('Y-m-d'));
+    $events = query('SELECT id, title, event_date, recurrence_id FROM hc_portal_events WHERE user_id = ? ORDER BY event_date DESC, title, id', [$user['id']])->fetchAll();
+    detail_start($task ? 'Editar tarefa' : 'Nova tarefa', 'agenda', true); ?>
+<a class="back-link" href="<?= e($task ? url('view-task', ['id' => $task['id']]) : url('agenda', ['mes' => substr($date, 0, 7), 'dia' => $date])) ?>"><?= icon('back') ?>Voltar</a><div class="page-heading"><div><span class="eyebrow">MINHA AGENDA</span><h1><?= $task ? 'Editar tarefa' : 'Nova tarefa' ?></h1><p>Organize suas atividades e marque cada uma ao concluir.</p></div><?php if (modal_request()): ?><div class="heading-actions"><button type="button" class="button button-primary note-edit-button" data-close title="Fechar"><?= icon('close') ?><span class="sr-only">Fechar</span></button></div><?php endif; ?></div>
+<section class="form-card event-form-card"><form method="post" action="<?= e(url($task ? 'update-task' : 'create-task')) ?>" data-event-form><?= csrf() ?><?php if ($task): ?><input type="hidden" name="id" value="<?= (int) $task['id'] ?>"><input type="hidden" name="revision" value="<?= (int) $task['revision'] ?>"><?php endif; ?>
+<?php render_agenda_fields($defaults, $date, 'tarefa'); render_recurrence_fields($task, $date, 'task'); ?>
+<label>Evento relacionado<select name="event_id"><option value="">Tarefa avulsa</option><?php foreach ($events as $event): ?><option data-recurring="<?= $event['recurrence_id'] === null ? '0' : '1' ?>" value="<?= (int) $event['id'] ?>" <?= (int) ($defaults['event_id'] ?? 0) === (int) $event['id'] ? 'selected' : '' ?>><?= e(event_day_label($event['event_date']) . ' · ' . $event['title']) ?></option><?php endforeach; ?></select></label>
+<div class="modal-actions"><?php if (modal_request()): ?><button type="button" class="button button-secondary" data-close>Cancelar</button><?php else: ?><a class="button button-secondary" href="<?= e(url('agenda', ['mes' => substr($date, 0, 7), 'dia' => $date])) ?>">Cancelar</a><?php endif; ?><button class="button button-primary" type="submit"><?= icon('check') ?>Salvar tarefa</button></div></form></section>
+<?php detail_end();
+}
+function render_task(array $task): void {
+    detail_start('Tarefa', 'agenda', true); ?>
+<a class="back-link" href="<?= e(url('agenda', ['mes' => substr($task['task_date'], 0, 7), 'dia' => $task['task_date']])) ?>"><?= icon('back') ?>Voltar à agenda</a><div class="page-heading"><div><span class="eyebrow">MINHA AGENDA · TAREFA</span><h1><?= e($task['title']) ?></h1><p><?= e(event_day_label($task['task_date'])) ?> · <?= e(event_time_label($task)) ?></p></div><div class="heading-actions"><?php render_task_status_form($task, url('view-task', ['id' => $task['id']])); ?><a class="button button-secondary" href="<?= e(url('edit-task', ['id' => $task['id']])) ?>"><?= icon('edit') ?>Editar</a><button class="icon-button" data-open="delete-task-dialog" aria-label="Excluir tarefa"><?= icon('trash') ?></button><?php if (modal_request()): ?><button type="button" class="button button-primary note-edit-button" data-close title="Fechar"><?= icon('close') ?><span class="sr-only">Fechar</span></button><?php endif; ?></div></div>
+<section class="form-card event-detail"><p><strong><?= $task['completed_at'] !== null ? 'Concluída' : 'Pendente' ?></strong></p><?= event_badge($task) ?><p>Categoria: <?= e(event_category_label($task)) ?></p><p>Matéria: <?= e($task['subject_name'] ?? 'Sem matéria') ?></p><p>Evento: <?php if ($task['event_id'] !== null): ?><a href="<?= e(url('view-event', ['id' => $task['event_id']])) ?>"><?= e($task['event_title']) ?></a><?php else: ?>Tarefa avulsa<?php endif; ?></p><?php if ($task['description'] !== ''): ?><div class="event-description"><?= nl2br(e($task['description'])) ?></div><?php endif; ?></section>
+<dialog id="delete-task-dialog" class="modal"><div class="modal-heading"><h2>Excluir tarefa</h2><button class="icon-button" data-close aria-label="Fechar"><?= icon('close') ?></button></div><p>Excluir “<?= e($task['title']) ?>” e seu aviso? Esta ação não pode ser desfeita.</p><form method="post" action="<?= e(url('delete-task')) ?>"><?= csrf() ?><input type="hidden" name="id" value="<?= (int) $task['id'] ?>"><input type="hidden" name="revision" value="<?= (int) $task['revision'] ?>"><?php render_recurrence_delete_scope($task); ?><label class="confirmation-check"><input type="checkbox" name="confirm" value="1" required>Confirmo a exclusão desta tarefa.</label><div class="modal-actions"><button class="button button-secondary" type="button" data-close>Cancelar</button><button class="button button-danger" type="submit">Excluir tarefa</button></div></form></dialog>
+<?php render_content_section('task', $task); detail_end();
+}

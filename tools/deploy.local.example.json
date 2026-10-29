@@ -1,0 +1,9 @@
+{
+  "site": "https://www.exemplo.com.br",
+  "ftp_host": "ftp.exemplo.com.br",
+  "ftp_user": "usuario_ftp",
+  "remote": "/www",
+  "db_host": "mysql.exemplo.com.br",
+  "db_name": "nome_do_banco",
+  "db_user": "usuario_do_banco"
+}

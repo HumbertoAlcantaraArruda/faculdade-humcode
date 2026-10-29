@@ -1,0 +1,15 @@
+/debug.log
+/portal/config.php
+/portal/mail-config.php
+/portal/storage/
+/server-reference/
+/artifacts/backups/
+/srv/
+/em_homologacao/
+/.test-runtime/
+*.log
+__pycache__/
+/.playwright-mcp/
+/tools/deploy.local.json
+/docs/
+/artifacts/
